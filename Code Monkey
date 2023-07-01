@@ -1,0 +1,20 @@
+import random
+import string
+
+def generate_random_code(length):
+    characters = string.ascii_letters + string.digits + string.punctuation + ' '
+    code = ''.join(random.choice(characters) for _ in range(length))
+    return code
+
+def code_monkey():
+    while True:
+        code_length = random.randint(10, 20)
+        code = generate_random_code(code_length)
+        print(code)
+        print("Press Enter to generate another code or 'q' to quit.")
+        user_input = input()
+        if user_input.lower() == 'q':
+            break
+
+if __name__ == "__main__":
+    code_monkey()
